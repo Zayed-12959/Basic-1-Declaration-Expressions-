@@ -1,0 +1,36 @@
+Convert days to years, months, weeks, and days
+
+Write a C program to convert specified days into years,months, weeks and days.
+Note: Ignore leap year.
+
+Test Data :
+Number of days : 2535
+Expected Output :
+Years: 6
+Months: 11
+Weeks: 2
+Days: 1
+
+-----------------------------------------------------------------------------
+
+#include<stdio.h>
+
+int main(){
+
+    int Numberofdays;
+    printf("Number of days: ");
+    scanf("%d", &Numberofdays);
+
+    int year  = Numberofdays/365;
+    int months = (Numberofdays%365)/30;
+    int weeks = ((Numberofdays%365)%30)/7;
+    int days = ((Numberofdays%365)%30)%7;
+
+    printf("Years: %d\n", year);
+    printf("Months: %d\n", months);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d\n", days);
+
+return 0;
+}
+
