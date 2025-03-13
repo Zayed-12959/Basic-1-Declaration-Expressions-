@@ -1,0 +1,44 @@
+Break amount into smallest banknotes
+
+Write a C program to read an amount (integer value) and break the amount into the smallest possible number of bank notes.
+Test Data :
+Input the amount: 375
+Expected Output:
+There are:
+3 Note(s) of 100.00
+1 Note(s) of 50.00
+1 Note(s) of 20.00
+0 Note(s) of 10.00
+1 Note(s) of 5.00
+0 Note(s) of 2.00
+0 Note(s) of 1.00
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+
+    int amount;
+    printf("Input the amount: ");
+    scanf("%d", &amount);
+
+    int tk100 = amount/100;
+    int tk50 = (amount%100)/50;
+    int tk20 = ((amount%100)%50)/20;
+    int tk10 = (((amount%100)%50)%20)/10;
+    int tk5 = ((((amount%100)%50)%20)%10)/5;
+    int tk2 = (((((amount%100)%50)%20)%10)%5)/2;
+    int tk1 = ((((((amount%100)%50)%20)%10)%5)%2)/1;
+
+    printf("%d notes of 100 tk\n", tk100);
+    printf("%d notes of 50 tk\n", tk50);
+    printf("%d notes of 20 tk\n", tk20);
+    printf("%d notes of 10 tk\n", tk10);
+    printf("%d notes of 5 tk\n", tk5);
+    printf("%d notes of 2 tk\n", tk2);
+    printf("%d notes of 1 tk\n", tk1);
+
+return 0;
+}
